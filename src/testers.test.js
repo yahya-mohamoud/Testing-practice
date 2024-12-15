@@ -1,4 +1,12 @@
-import { analyzeArr, avgArr, calculate, capitalize, lengthArr, maxArr, minArr, reverse } from "./testers"
+import { analyzeArr,
+         avgArr,
+         calculate,
+         capitalize,
+         cipher,
+         lengthArr,
+         maxArr,
+         minArr,
+         reverse } from "./testers"
 
 describe ("check if the first letter is capitalized", () => {
     test('is it the first capitalized', () => {
@@ -61,6 +69,12 @@ describe("calculator tests", () => {
         expect(() => div(5, 0).toThrow("Error"))
     })
     
+})
+
+describe("checks and encrypt in ceaser cipherText", () => {
+    test("convert normal text into ceaser cipher", () => {
+        expect(cipher("hello world", 3)).toBe("khoor zruog")
+    })
 })
 
 test("average of the array", () => {
