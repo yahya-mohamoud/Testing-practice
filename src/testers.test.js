@@ -1,4 +1,4 @@
-import { calculate, capitalize, reverse } from "./testers"
+import { analyzeArr, avgArr, calculate, capitalize, lengthArr, maxArr, minArr, reverse } from "./testers"
 
 describe ("check if the first letter is capitalized", () => {
     test('is it the first capitalized', () => {
@@ -61,8 +61,35 @@ describe("calculator tests", () => {
         expect(() => div(5, 0).toThrow("Error"))
     })
     
-    
-
-    // expect(calculate.div(10, 0)).toThrow()
 })
 
+test("average of the array", () => {
+    expect(avgArr([2,1,4,3,6,5])).toBe(3.5)
+})
+
+test("min of the array", () => {
+    expect(minArr([2, 1, 4, 3, 6, 5])).toBe(1)
+})
+
+test("max number of the array", () => {
+    expect(maxArr([2, 1, 4, 3, 6, 5])).toBe(6)
+})
+
+test("length of the array", () => {
+    expect(lengthArr([1,4,3,6,5,2])).toBe(6)
+})
+
+
+describe("anlayze arrays", () => {
+   test("analyze arrays", () => {
+    
+    const objects = analyzeArr([1,4,3,6,5,2])
+    
+    expect(objects).toEqual({
+            average: 3.5,
+            min: 1,
+            max: 6,
+            length: 6
+        })
+   })
+})
